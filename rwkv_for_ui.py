@@ -21,7 +21,7 @@ class OthelloAI:
         from rwkv.utils import PIPELINE, PIPELINE_ARGS
         
         # self.model = RWKV(model=model_path, strategy="cuda fp16")
-        self.model = RWKV(model=model_path, strategy="cpu fp32")
+        self.model = RWKV(model=model_path, strategy="musa fp16")
         self.pipeline = PIPELINE(self.model, "rwkv_vocab_v20230424")
         self.pipeline.tokenizer = TRIE_TOKENIZER("othello_vocab.txt")
         self.gen_args = PIPELINE_ARGS(top_k=1, alpha_frequency=0, alpha_presence=0, token_stop=[0])

@@ -5,6 +5,8 @@ from othello import Othello
 from rwkv_for_ui import OthelloAI
 from typing import Dict, Any
 import os
+import torch
+import torch_musa
 
 
 class ModernOthelloUI:
